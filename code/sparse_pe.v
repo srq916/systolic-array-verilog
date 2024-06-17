@@ -43,7 +43,7 @@ module single_PE_rounded #(
       else if (index_left < index_up) begin
         // 情况1.2：上方输入序号更大，舍弃左边的输入，存储上方的输入
         cache [INDEX_SIZE+DATA_WIDTH] <= 0;
-        cache [INDEX_SIZE+DATA_WIDTH - 1 -: INDEX_SIZE] = index_up;
+        cache [INDEX_SIZE+DATA_WIDTH - 1 -: INDEX_SIZE] <= index_up;
         cache [DATA_WIDTH-1 : 0] = i_up;
         if (cache_use[INDEX_SIZE+DATA_WIDTH] == 0) begin
           if(cache_use[INDEX_SIZE+DATA_WIDTH-1 -: INDEX_SIZE] == index_left) begin
